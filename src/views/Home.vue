@@ -1,18 +1,35 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="wrapper">
+    <HeaderComponent :title="title" center=true></HeaderComponent>
+    <main class="main">
+      <div class="container">
+        <ListCardsComponent></ListCardsComponent>
+      </div>
+    </main>
+    <FooterComponent :footer="footer"></FooterComponent>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import ListCardsComponent from '@/components/ListCardsComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HeaderComponent,
+    FooterComponent,
+    ListCardsComponent
+  },
+  data() {
+    return{
+      title: "CODES ERRORS",
+      'footer': {
+        'name': 'Carlos Santillan Espinoza',
+        'job': 'Web Developer'
+      }
+    }
   }
 }
 </script>
